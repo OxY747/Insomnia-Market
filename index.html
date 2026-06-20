@@ -17,7 +17,7 @@ body{
     background:#0a0a0a;
 }
 
-/* NAVBAR - PEWNY FIX */
+/* NAVBAR */
 nav{
     position:fixed;
     top:0;
@@ -47,6 +47,7 @@ nav ul{
 nav ul li a{
     color:white;
     text-decoration:none;
+    transition:0.3s;
 }
 
 nav ul li a:hover{
@@ -102,16 +103,31 @@ h3{
 /* SHOP */
 .shop{
     padding:80px 20px;
-    display:flex;
-    gap:25px;
-    justify-content:center;
-    flex-wrap:wrap;
 }
 
+/* TITLE */
+.title{
+    color:white;
+    text-align:center;
+    margin:40px 0 20px 0;
+    font-size:30px;
+    letter-spacing:3px;
+}
+
+/* CATEGORY */
+.category{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+/* ITEM */
 .item{
     background:#1c1c1c;
     padding:25px;
-    width:260px;
+    width:250px;
     border-radius:15px;
     color:white;
     transition:0.3s;
@@ -119,41 +135,87 @@ h3{
 }
 
 .item:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 25px rgba(255,0,255,0.25);
+    transform:scale(1.07);
+    box-shadow:0 0 20px rgba(255,0,255,0.25);
+}
+
+.item span{
+    color:#ff00ff;
+    font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
     <div class="logoSmall">INSOMNIA</div>
     <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#shop">Shop</a></li>
-        <li><a href="#">Discord</a></li>
     </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
     <h1 class="logo">INSOMNIA</h1>
     <h3>ARK: Survival Ascended</h3>
 </section>
 
+<!-- SHOP -->
 <section class="shop" id="shop">
 
-  <div class="item">
-    <h2>Starter Pack</h2>
-    <p>Podstawowy zestaw na start</p>
-    <span>10 PLN</span>
-  </div>
+    <h2 class="title">VIP</h2>
+    <div class="category">
 
-  <div class="item">
-    <h2>VIP Kit</h2>
-    <p>Lepszy ekwipunek i bonusy</p>
-    <span>25 PLN</span>
-  </div>
+        <div class="item">
+            <h3>VIP Kit</h3>
+            <p>Lepszy ekwipunek i bonusy</p>
+            <span>25 PLN</span>
+        </div>
+
+        <div class="item">
+            <h3>Elite Pack</h3>
+            <p>Premium start + boost</p>
+            <span>40 PLN</span>
+        </div>
+
+    </div>
+
+    <h2 class="title">DINOS</h2>
+    <div class="category">
+
+        <div class="item">
+            <h3>Alpha Mount</h3>
+            <p>Rzadki dinozaur</p>
+            <span>50 PLN</span>
+        </div>
+
+        <div class="item">
+            <h3>Rex Boss</h3>
+            <p>Potężny T-Rex</p>
+            <span>70 PLN</span>
+        </div>
+
+    </div>
+
+    <h2 class="title">KITS</h2>
+    <div class="category">
+
+        <div class="item">
+            <h3>Starter Kit</h3>
+            <p>Podstawowy zestaw</p>
+            <span>10 PLN</span>
+        </div>
+
+        <div class="item">
+            <h3>Survival Kit</h3>
+            <p>Na start i przetrwanie</p>
+            <span>15 PLN</span>
+        </div>
+
+    </div>
 
 </section>
 
