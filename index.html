@@ -92,6 +92,47 @@ h3{
     50%{transform:translateY(10px);}
 }
 
+/* WHY SECTION */
+.why{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.why h2{
+    font-size:32px;
+    margin-bottom:40px;
+    letter-spacing:2px;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:20px;
+}
+
+.why-box{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:20px;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.why-box:hover{
+    transform:translateY(-5px);
+    background:rgba(255,0,255,0.08);
+}
+
+.why-box h3{
+    margin-bottom:10px;
+    font-size:18px;
+}
+
+.why-box p{
+    font-size:13px;
+    opacity:0.8;
+}
+
 /* SHOP */
 .shop{
     padding:80px 10%;
@@ -134,7 +175,7 @@ h3{
     padding:10px 20px 20px 20px;
 }
 
-/* ITEM (ARK STYLE) */
+/* ITEM */
 .item-adv{
     display:flex;
     align-items:center;
@@ -186,6 +227,7 @@ h3{
     <div class="logoSmall">INSOMNIA</div>
     <ul>
         <li><a href="#">Home</a></li>
+        <li><a href="#why">Why Us</a></li>
         <li><a href="#shop">Shop</a></li>
     </ul>
 </nav>
@@ -195,13 +237,45 @@ h3{
     <h3>ARK: Survival Ascended</h3>
 </section>
 
+<!-- WHY SECTION -->
+<section class="why" id="why">
+
+    <h2>DLACZEGO INSOMNIA?</h2>
+
+    <div class="why-grid">
+
+        <div class="why-box">
+            <h3>⚡ Szybka realizacja</h3>
+            <p>Itemy trafiają do Ciebie w krótkim czasie po zakupie.</p>
+        </div>
+
+        <div class="why-box">
+            <h3>🛡️ Bezpieczeństwo</h3>
+            <p>Twoje dane i zamówienia są w pełni chronione.</p>
+        </div>
+
+        <div class="why-box">
+            <h3>🎮 Realne itemy</h3>
+            <p>Wszystko działa bezpośrednio na serwerze ARK.</p>
+        </div>
+
+        <div class="why-box">
+            <h3>🔥 Jakość premium</h3>
+            <p>Najlepsze i sprawdzone paczki dla graczy.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SHOP -->
 <section class="shop" id="shop">
 
-<!-- VIP -->
 <div class="category">
     <div class="category-header" onclick="toggle(this)">
         VIP <span class="arrow">▼</span>
     </div>
+
     <div class="items">
 
         <div class="item-adv">
@@ -216,11 +290,11 @@ h3{
     </div>
 </div>
 
-<!-- DINOS -->
 <div class="category">
     <div class="category-header" onclick="toggle(this)">
         DINOS <span class="arrow">▼</span>
     </div>
+
     <div class="items">
 
         <div class="item-adv">
