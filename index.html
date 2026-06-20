@@ -87,13 +87,14 @@ nav ul li a{
     padding:80px 10%;
 }
 
-/* CATEGORY BUTTON */
+/* CATEGORY BOX */
 .category{
     margin-bottom:20px;
     border:1px solid rgba(255,255,255,0.1);
     background:rgba(255,255,255,0.02);
 }
 
+/* HEADER */
 .category-header{
     padding:15px 20px;
     cursor:pointer;
@@ -108,14 +109,21 @@ nav ul li a{
     background:rgba(255,0,255,0.1);
 }
 
-/* ARROW */
 .arrow{
     transition:0.3s;
 }
 
-/* ITEMS (ukryte domyślnie) */
+/* ITEMS (SLIDE) */
 .items{
-    display:none;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
+    padding:0 20px;
+}
+
+/* OPEN STATE */
+.category.open .items{
+    max-height:500px;
     padding:10px 20px 20px 20px;
 }
 
@@ -127,10 +135,12 @@ nav ul li a{
     margin-top:10px;
     background:rgba(255,255,255,0.03);
     border:1px solid rgba(255,255,255,0.05);
+    transition:0.3s;
 }
 
 .item:hover{
     background:rgba(255,0,255,0.08);
+    transform:translateX(5px);
 }
 
 .price{
@@ -216,15 +226,15 @@ nav ul li a{
 
 <script>
 function toggle(el){
-    const items = el.nextElementSibling;
+    const category = el.parentElement;
     const arrow = el.querySelector(".arrow");
 
-    if(items.style.display === "block"){
-        items.style.display = "none";
-        arrow.innerText = "▼";
-    } else {
-        items.style.display = "block";
+    category.classList.toggle("open");
+
+    if(category.classList.contains("open")){
         arrow.innerText = "▲";
+    } else {
+        arrow.innerText = "▼";
     }
 }
 </script>
