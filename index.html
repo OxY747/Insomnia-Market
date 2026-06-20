@@ -10,12 +10,14 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
     font-family:Arial;
     background:#0f0f10;
     color:white;
+    overflow-x:hidden;
 }
 
 /* NAV */
@@ -25,6 +27,9 @@ nav{
     padding:15px 30px;
     background:#141416;
     border-bottom:1px solid #222;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 nav ul{
@@ -50,6 +55,9 @@ nav a:hover{
 
 .hero h1{
     font-size:60px;
+    background: linear-gradient(90deg, #b38bff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero p{
@@ -57,7 +65,7 @@ nav a:hover{
     margin-top:10px;
 }
 
-/* FEATURES (screen section) */
+/* FEATURES */
 .features{
     padding:60px 10%;
 }
@@ -68,21 +76,37 @@ nav a:hover{
     gap:15px;
 }
 
+/* FEATURE CARD */
 .feature{
     display:flex;
     align-items:center;
     gap:12px;
     padding:18px;
-    background:rgba(255,255,255,0.03);
+    background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
     border:1px solid rgba(255,255,255,0.08);
-    border-radius:12px;
-    transition:0.25s;
+    border-radius:14px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: radial-gradient(circle at top left, rgba(179,139,255,0.15), transparent 60%);
+    opacity:0;
+    transition:0.3s;
 }
 
 .feature:hover{
-    transform:translateY(-4px);
-    background:rgba(168,85,247,0.08);
-    border-color:rgba(168,85,247,0.3);
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(179,139,255,0.35);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.feature:hover::before{
+    opacity:1;
 }
 
 .icon{
@@ -117,15 +141,41 @@ nav a:hover{
     font-size:14px;
 }
 
-/* ITEM */
+/* ITEM CARD */
 .item{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px;
+    padding:16px 18px;
     border:1px solid #222;
-    margin-bottom:8px;
-    background:#141416;
+    margin-bottom:10px;
+    background: linear-gradient(145deg, #141416, #101012);
+    border-radius:12px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.item::before{
+    content:"";
+    position:absolute;
+    left:-100%;
+    top:0;
+    width:100%;
+    height:100%;
+    background: linear-gradient(90deg, transparent, rgba(179,139,255,0.12), transparent);
+    transition: 0.5s;
+}
+
+.item:hover{
+    transform: translateY(-4px);
+    border-color: #b38bff;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+.item:hover::before{
+    left:100%;
 }
 
 .item-left{
@@ -142,6 +192,13 @@ nav a:hover{
 .price{
     color:#b38bff;
     font-weight:bold;
+}
+
+/* RESPONSIVE */
+@media (max-width:600px){
+    .hero h1{
+        font-size:36px;
+    }
 }
 </style>
 </head>
@@ -162,7 +219,6 @@ nav a:hover{
     <p>ARK Survival Ascended Market</p>
 </div>
 
-<!-- FEATURES SECTION -->
 <section class="features" id="features">
 
     <div class="feature-grid">
@@ -194,7 +250,7 @@ nav a:hover{
         <div class="feature">
             <div class="icon">🛡️</div>
             <div>
-                <h3>Spayed Service</h3>
+                <h3>Stable Service</h3>
                 <p>Always reachable</p>
             </div>
         </div>
@@ -219,14 +275,13 @@ nav a:hover{
 
 </section>
 
-<!-- SHOP -->
 <section class="shop" id="shop">
 
     <div class="category-title">VIP</div>
 
     <div class="item">
         <div class="item-left">
-            <img src="https://ark-unity.com/images/icons/CementPaste_Icon.webp">
+            <img src="https://ark-unity.com/images/icons/CementPaste_Icon.webp" alt="Cementing Paste">
             <div>Cementing Paste</div>
         </div>
         <div class="price">30K ADV</div>
