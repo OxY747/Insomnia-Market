@@ -49,6 +49,10 @@ nav ul li a{
     text-decoration:none;
 }
 
+nav ul li a:hover{
+    color:#ff00ff;
+}
+
 /* HERO */
 .hero{
     height:100vh;
@@ -68,6 +72,12 @@ nav ul li a{
     animation: glow 2s infinite alternate, float 4s infinite ease-in-out;
 }
 
+h3{
+    font-size:30px;
+    margin-top:10px;
+}
+
+/* ANIMACJE */
 @keyframes glow{
     from{
         text-shadow:0 0 10px #fff, 0 0 20px #ff00ff;
@@ -87,14 +97,13 @@ nav ul li a{
     padding:80px 10%;
 }
 
-/* CATEGORY BOX */
+/* CATEGORY */
 .category{
     margin-bottom:20px;
     border:1px solid rgba(255,255,255,0.1);
     background:rgba(255,255,255,0.02);
 }
 
-/* HEADER */
 .category-header{
     padding:15px 20px;
     cursor:pointer;
@@ -102,7 +111,6 @@ nav ul li a{
     justify-content:space-between;
     align-items:center;
     font-size:20px;
-    transition:0.3s;
 }
 
 .category-header:hover{
@@ -113,7 +121,7 @@ nav ul li a{
     transition:0.3s;
 }
 
-/* ITEMS (SLIDE) */
+/* SLIDE */
 .items{
     max-height:0;
     overflow:hidden;
@@ -121,26 +129,48 @@ nav ul li a{
     padding:0 20px;
 }
 
-/* OPEN STATE */
 .category.open .items{
-    max-height:500px;
+    max-height:600px;
     padding:10px 20px 20px 20px;
 }
 
-/* ITEM */
-.item{
+/* ITEM (ARK STYLE) */
+.item-adv{
     display:flex;
+    align-items:center;
     justify-content:space-between;
-    padding:15px;
-    margin-top:10px;
+    padding:15px 20px;
+    margin:10px 0;
     background:rgba(255,255,255,0.03);
-    border:1px solid rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
     transition:0.3s;
 }
 
-.item:hover{
+.item-adv:hover{
     background:rgba(255,0,255,0.08);
-    transform:translateX(5px);
+    transform:translateX(6px);
+}
+
+.item-adv img{
+    width:50px;
+    height:50px;
+    margin-right:15px;
+}
+
+.item-adv .info{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.item-adv h3{
+    font-size:16px;
+    margin-bottom:3px;
+}
+
+.item-adv p{
+    font-size:12px;
+    opacity:0.7;
 }
 
 .price{
@@ -174,14 +204,13 @@ nav ul li a{
     </div>
     <div class="items">
 
-        <div class="item">
-            <div>VIP Kit</div>
-            <div class="price">25 PLN</div>
-        </div>
-
-        <div class="item">
-            <div>Elite Pack</div>
-            <div class="price">40 PLN</div>
+        <div class="item-adv">
+            <img src="https://ark-unity.com/images/icons/CementPaste_Icon.webp">
+            <div class="info">
+                <h3>Cementing Paste</h3>
+                <p>Crafting Resource</p>
+            </div>
+            <div class="price">30K ADV</div>
         </div>
 
     </div>
@@ -194,29 +223,13 @@ nav ul li a{
     </div>
     <div class="items">
 
-        <div class="item">
-            <div>Alpha Mount</div>
-            <div class="price">50 PLN</div>
-        </div>
-
-        <div class="item">
-            <div>Rex Boss</div>
-            <div class="price">70 PLN</div>
-        </div>
-
-    </div>
-</div>
-
-<!-- KITS -->
-<div class="category">
-    <div class="category-header" onclick="toggle(this)">
-        KITS <span class="arrow">▼</span>
-    </div>
-    <div class="items">
-
-        <div class="item">
-            <div>Starter Kit</div>
-            <div class="price">10 PLN</div>
+        <div class="item-adv">
+            <img src="https://ark-unity.com/images/icons/CementPaste_Icon.webp">
+            <div class="info">
+                <h3>Alpha Mount</h3>
+                <p>Rare Dino</p>
+            </div>
+            <div class="price">50K ADV</div>
         </div>
 
     </div>
