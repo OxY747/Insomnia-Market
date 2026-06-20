@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,10 +49,6 @@ nav ul li a{
     text-decoration:none;
 }
 
-nav ul li a:hover{
-    color:#ff00ff;
-}
-
 /* HERO */
 .hero{
     height:100vh;
@@ -72,12 +68,6 @@ nav ul li a:hover{
     animation: glow 2s infinite alternate, float 4s infinite ease-in-out;
 }
 
-h3{
-    font-size:30px;
-    margin-top:10px;
-}
-
-/* ANIMACJE */
 @keyframes glow{
     from{
         text-shadow:0 0 10px #fff, 0 0 20px #ff00ff;
@@ -97,43 +87,52 @@ h3{
     padding:80px 10%;
 }
 
-/* TITLE */
-.title{
-    margin:50px 0 15px;
-    font-size:26px;
-    border-left:4px solid #ff00ff;
-    padding-left:10px;
+/* CATEGORY BUTTON */
+.category{
+    margin-bottom:20px;
+    border:1px solid rgba(255,255,255,0.1);
+    background:rgba(255,255,255,0.02);
 }
 
-/* LISTA ITEMÓW */
-.item{
+.category-header{
+    padding:15px 20px;
+    cursor:pointer;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 20px;
-    margin-bottom:10px;
+    font-size:20px;
+    transition:0.3s;
+}
+
+.category-header:hover{
+    background:rgba(255,0,255,0.1);
+}
+
+/* ARROW */
+.arrow{
+    transition:0.3s;
+}
+
+/* ITEMS (ukryte domyślnie) */
+.items{
+    display:none;
+    padding:10px 20px 20px 20px;
+}
+
+/* ITEM */
+.item{
+    display:flex;
+    justify-content:space-between;
+    padding:15px;
+    margin-top:10px;
     background:rgba(255,255,255,0.03);
     border:1px solid rgba(255,255,255,0.05);
-    transition:0.3s;
 }
 
 .item:hover{
     background:rgba(255,0,255,0.08);
-    transform:translateX(5px);
 }
 
-/* LEWA STRONA */
-.item-left h3{
-    margin-bottom:5px;
-    font-size:18px;
-}
-
-.item-left p{
-    font-size:13px;
-    opacity:0.7;
-}
-
-/* CENA */
 .price{
     color:#ff00ff;
     font-weight:bold;
@@ -152,59 +151,83 @@ h3{
 </nav>
 
 <section class="hero">
-    <h1 class="logo">INSOMNIA MARKET</h1>
+    <h1 class="logo">INSOMNIA</h1>
     <h3>ARK: Survival Ascended</h3>
 </section>
 
 <section class="shop" id="shop">
 
-    <div class="title">VIP</div>
-
-    <div class="item">
-        <div class="item-left">
-            <h3>VIP Kit</h3>
-            <p>Lepszy ekwipunek i bonusy</p>
-        </div>
-        <div class="price">25 PLN</div>
+<!-- VIP -->
+<div class="category">
+    <div class="category-header" onclick="toggle(this)">
+        VIP <span class="arrow">▼</span>
     </div>
+    <div class="items">
 
-    <div class="item">
-        <div class="item-left">
-            <h3>Elite Pack</h3>
-            <p>Premium start + boost</p>
+        <div class="item">
+            <div>VIP Kit</div>
+            <div class="price">25 PLN</div>
         </div>
-        <div class="price">40 PLN</div>
-    </div>
 
-    <div class="title">DINOS</div>
-
-    <div class="item">
-        <div class="item-left">
-            <h3>Alpha Mount</h3>
-            <p>Rzadki dinozaur</p>
+        <div class="item">
+            <div>Elite Pack</div>
+            <div class="price">40 PLN</div>
         </div>
-        <div class="price">50 PLN</div>
-    </div>
 
-    <div class="item">
-        <div class="item-left">
-            <h3>Rex Boss</h3>
-            <p>Potężny T-Rex</p>
+    </div>
+</div>
+
+<!-- DINOS -->
+<div class="category">
+    <div class="category-header" onclick="toggle(this)">
+        DINOS <span class="arrow">▼</span>
+    </div>
+    <div class="items">
+
+        <div class="item">
+            <div>Alpha Mount</div>
+            <div class="price">50 PLN</div>
         </div>
-        <div class="price">70 PLN</div>
-    </div>
 
-    <div class="title">KITS</div>
-
-    <div class="item">
-        <div class="item-left">
-            <h3>Starter Kit</h3>
-            <p>Podstawowy zestaw</p>
+        <div class="item">
+            <div>Rex Boss</div>
+            <div class="price">70 PLN</div>
         </div>
-        <div class="price">FREE</div>
+
     </div>
+</div>
+
+<!-- KITS -->
+<div class="category">
+    <div class="category-header" onclick="toggle(this)">
+        KITS <span class="arrow">▼</span>
+    </div>
+    <div class="items">
+
+        <div class="item">
+            <div>Starter Kit</div>
+            <div class="price">10 PLN</div>
+        </div>
+
+    </div>
+</div>
 
 </section>
+
+<script>
+function toggle(el){
+    const items = el.nextElementSibling;
+    const arrow = el.querySelector(".arrow");
+
+    if(items.style.display === "block"){
+        items.style.display = "none";
+        arrow.innerText = "▼";
+    } else {
+        items.style.display = "block";
+        arrow.innerText = "▲";
+    }
+}
+</script>
 
 </body>
 </html>
