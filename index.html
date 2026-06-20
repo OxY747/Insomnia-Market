@@ -18,14 +18,12 @@ body{
     color:white;
     overflow-x:hidden;
 
-    /* BACKGROUND IMAGE */
-    background-image: url("https://cdn.neowin.com/news/images/uploaded/2023/10/1698256420_ss_3c4d9089501a98a9dace96fd5c3ccbf1dfc7d8f4.1920x1080.jpg");
+    background-image: url("https://images.steamusercontent.com/ugc/2133076877779200178/2D7FEA5F3E6D498FB2CC6372EEAA0C25455B14D2/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-/* DARK OVERLAY */
 body::before{
     content:"";
     position:fixed;
@@ -34,7 +32,6 @@ body::before{
     z-index:-1;
 }
 
-/* PURPLE GLOW */
 body::after{
     content:"";
     position:fixed;
@@ -88,67 +85,61 @@ nav a:hover{
     margin-top:10px;
 }
 
-/* FEATURES */
-.features{
+/* WHY US SECTION */
+.why{
     padding:60px 10%;
 }
 
-.feature-grid{
+.section-title{
+    text-align:center;
+    font-size:22px;
+    margin-bottom:25px;
+    color:#ddd;
+}
+
+/* GRID */
+.why-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
     gap:15px;
 }
 
-/* FEATURE CARD */
-.feature{
-    display:flex;
-    align-items:center;
-    gap:12px;
+/* CARD */
+.card{
     padding:18px;
+    border-radius:14px;
     background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
     border:1px solid rgba(255,255,255,0.08);
-    border-radius:14px;
-    transition: all 0.25s ease;
-    position: relative;
-    overflow: hidden;
+    transition:0.25s ease;
+    position:relative;
+    overflow:hidden;
 }
 
-.feature::before{
+.card::before{
     content:"";
     position:absolute;
     inset:0;
-    background: radial-gradient(circle at top left, rgba(179,139,255,0.15), transparent 60%);
+    background: radial-gradient(circle at top left, rgba(179,139,255,0.18), transparent 60%);
     opacity:0;
     transition:0.3s;
 }
 
-.feature:hover{
+.card:hover{
     transform: translateY(-6px) scale(1.02);
-    border-color: rgba(179,139,255,0.35);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    border-color: rgba(179,139,255,0.4);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
 }
 
-.feature:hover::before{
+.card:hover::before{
     opacity:1;
 }
 
-.icon{
-    width:40px;
-    height:40px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:18px;
-    background:rgba(255,255,255,0.05);
-    border-radius:10px;
-}
-
-.feature h3{
+.card h3{
+    margin-bottom:8px;
     font-size:15px;
-    margin-bottom:3px;
 }
 
-.feature p{
+.card p{
     font-size:12px;
     color:#9a9aa6;
 }
@@ -164,7 +155,6 @@ nav a:hover{
     font-size:14px;
 }
 
-/* ITEM CARD */
 .item{
     display:flex;
     justify-content:space-between;
@@ -232,7 +222,7 @@ nav a:hover{
     <div>INSOMNIA</div>
     <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#features">Info</a></li>
+        <li><a href="#why">Why us</a></li>
         <li><a href="#shop">Shop</a></li>
     </ul>
 </nav>
@@ -242,62 +232,42 @@ nav a:hover{
     <p>ARK Survival Ascended Market</p>
 </div>
 
-<section class="features" id="features">
+<!-- WHY US -->
+<section class="why" id="why">
 
-    <div class="feature-grid">
+    <div class="section-title">Dlaczego mają wybrać nas?</div>
 
-        <div class="feature">
-            <div class="icon">⚡</div>
-            <div>
-                <h3>Low Latency</h3>
-                <p>Optimized routing</p>
-            </div>
+    <div class="why-grid">
+
+        <div class="card">
+            <h3>⚡ Najniższy ping</h3>
+            <p>Optymalizowane połączenia zapewniają szybkie i stabilne działanie bez lagów.</p>
         </div>
 
-        <div class="feature">
-            <div class="icon">🔒</div>
-            <div>
-                <h3>High Stability</h3>
-                <p>99.5% uptime target</p>
-            </div>
+        <div class="card">
+            <h3>🛡️ Bezpieczeństwo</h3>
+            <p>Każda transakcja i usługa jest chroniona i stale monitorowana.</p>
         </div>
 
-        <div class="feature">
-            <div class="icon">🌍</div>
-            <div>
-                <h3>EU & NA Servers</h3>
-                <p>Play close to home</p>
-            </div>
+        <div class="card">
+            <h3>🌍 Globalne serwery</h3>
+            <p>EU i NA infrastruktura zapewnia dostępność z każdego regionu.</p>
         </div>
 
-        <div class="feature">
-            <div class="icon">🛡️</div>
-            <div>
-                <h3>Stable Service</h3>
-                <p>Always reachable</p>
-            </div>
+        <div class="card">
+            <h3>📈 Wysoka wydajność</h3>
+            <p>Stabilność nawet przy dużym obciążeniu graczy i transakcji.</p>
         </div>
 
-        <div class="feature">
-            <div class="icon">📈</div>
-            <div>
-                <h3>High Performance</h3>
-                <p>Stable under load</p>
-            </div>
-        </div>
-
-        <div class="feature">
-            <div class="icon">🛠️</div>
-            <div>
-                <h3>Actively Managed</h3>
-                <p>Developers on standby</p>
-            </div>
+        <div class="card">
+            <h3>🛠️ Stały rozwój</h3>
+            <p>System jest stale aktualizowany i ulepszany przez devów.</p>
         </div>
 
     </div>
-
 </section>
 
+<!-- SHOP -->
 <section class="shop" id="shop">
 
     <div class="category-title">VIP</div>
