@@ -1,3 +1,5 @@
+Wklej i działa od razu:
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -16,6 +18,7 @@ body{
     font-family:Arial, sans-serif;
 }
 
+/* HERO */
 .hero{
     height:100vh;
     background:url('banner.jpg') center center;
@@ -28,13 +31,73 @@ body{
     text-shadow:0 0 20px black;
 }
 
-h1{
+/* LOGO */
+.logo{
     font-size:100px;
+    letter-spacing:10px;
+    color:white;
+    text-transform:uppercase;
+    animation: fadeIn 2s ease-out, glow 2s infinite alternate, float 4s ease-in-out infinite;
 }
 
+/* ANIMACJE */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #ffffff, 0 0 20px #ff00ff;
+    }
+    to{
+        text-shadow:0 0 20px #ffffff, 0 0 40px #ff00ff, 0 0 60px #8a2be2;
+    }
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(10px);
+    }
+}
+
+/* SUBTITLE */
 h3{
     font-size:30px;
     margin-top:10px;
+}
+
+/* SHOP */
+.shop{
+    background:#0f0f0f;
+    padding:60px;
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.item{
+    background:#1c1c1c;
+    padding:20px;
+    width:250px;
+    border-radius:15px;
+    color:white;
+    box-shadow:0 0 20px rgba(0,0,0,0.6);
+    transition:0.3s;
+}
+
+.item:hover{
+    transform:scale(1.05);
 }
 </style>
 </head>
@@ -42,8 +105,30 @@ h3{
 <body>
 
 <section class="hero">
-    <h1>INSOMNIA</h1>
+    <h1 class="logo">INSOMNIA</h1>
     <h3>ARK: Survival Ascended</h3>
+</section>
+
+<section class="shop">
+
+  <div class="item">
+    <h2>Starter Pack</h2>
+    <p>Podstawowy zestaw na start</p>
+    <span>10 PLN</span>
+  </div>
+
+  <div class="item">
+    <h2>VIP Kit</h2>
+    <p>Lepszy ekwipunek i bonusy</p>
+    <span>25 PLN</span>
+  </div>
+
+  <div class="item">
+    <h2>Alpha Mount</h2>
+    <p>Rzadki dinozaur mount</p>
+    <span>50 PLN</span>
+  </div>
+
 </section>
 
 </body>
