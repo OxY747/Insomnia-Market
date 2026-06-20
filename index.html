@@ -17,6 +17,43 @@ body{
     background:#0a0a0a;
 }
 
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    z-index:1000;
+}
+
+nav .logoSmall{
+    color:white;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ff00ff;
+}
+
 /* HERO */
 .hero{
     height:100vh;
@@ -28,9 +65,9 @@ body{
     flex-direction:column;
     color:white;
     text-shadow:0 0 20px black;
+    padding-top:60px;
 }
 
-/* LOGO */
 .logo{
     font-size:100px;
     letter-spacing:10px;
@@ -38,16 +75,15 @@ body{
     animation: fadeIn 2s ease-out, glow 2s infinite alternate, float 4s ease-in-out infinite;
 }
 
+h3{
+    font-size:30px;
+    margin-top:10px;
+}
+
 /* ANIMACJE */
 @keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(-30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
 @keyframes glow{
@@ -60,17 +96,8 @@ body{
 }
 
 @keyframes float{
-    0%,100%{
-        transform:translateY(0px);
-    }
-    50%{
-        transform:translateY(10px);
-    }
-}
-
-h3{
-    font-size:30px;
-    margin-top:10px;
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(10px);}
 }
 
 /* SHOP */
@@ -97,15 +124,6 @@ h3{
     box-shadow:0 0 25px rgba(255,0,255,0.25);
 }
 
-.item h2{
-    margin-bottom:10px;
-}
-
-.item p{
-    opacity:0.8;
-    margin-bottom:10px;
-}
-
 .item span{
     color:#ff00ff;
     font-weight:bold;
@@ -115,12 +133,24 @@ h3{
 
 <body>
 
+<!-- NAV -->
+<nav>
+    <div class="logoSmall">INSOMNIA</div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#">Discord</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
 <section class="hero">
     <h1 class="logo">INSOMNIA</h1>
     <h3>ARK: Survival Ascended</h3>
 </section>
 
-<section class="shop">
+<!-- SHOP -->
+<section class="shop" id="shop">
 
   <div class="item">
     <h2>Starter Pack</h2>
@@ -142,7 +172,5 @@ h3{
 
 </section>
 
-</body>
-</html>
 </body>
 </html>
