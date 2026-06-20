@@ -15,9 +15,32 @@
 
 body{
     font-family:Arial;
-    background:#0f0f10;
     color:white;
     overflow-x:hidden;
+
+    /* BACKGROUND IMAGE */
+    background-image: url("https://images.steamusercontent.com/ugc/2133076877779200178/2D7FEA5F3E6D498FB2CC6372EEAA0C25455B14D2/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* DARK OVERLAY */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background: rgba(0,0,0,0.65);
+    z-index:-1;
+}
+
+/* PURPLE GLOW */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background: radial-gradient(circle at top, rgba(179,139,255,0.15), transparent 60%);
+    z-index:-1;
 }
 
 /* NAV */
